@@ -1,0 +1,13 @@
+[{
+    "name": "Bike",
+    "image": "https://media.zigcdn.com/media/model/2020/Mar/yamaha-yzf-r15-v3-right-side-view_270x180.jpg"
+  }, {
+    "name": "Bus",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRn2owwRLe9n30vAcmh3v31Tm6kjfuJ_t1A1w&usqp=CAU"
+  }, {
+    "name": "Car",
+    "image": "https://i.insider.com/578e9e4588e4a77c708b8db1?width=750&format=jpeg&auto=webp"
+  }, {
+    "name": "Train",
+    "image": "https://static.toiimg.com/thumb/msid-78287167,width-1200,height-900,resizemode-4/.jpg"
+  }]
