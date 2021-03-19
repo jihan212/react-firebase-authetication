@@ -1,0 +1,32 @@
+.login{
+    width: 100%;
+}
+.form{
+    width:70%;
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    border: 1px solid #111;
+    border-radius: 10px;
+    padding:10px;
+}
+.form p {
+    text-align: center;
+}
+.form Button {
+    width:30%;
+    height: 40px;
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.buttons Button{
+    width:30%;
+    height: 40px;
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    border-radius: 25px;
+}

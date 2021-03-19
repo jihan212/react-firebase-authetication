@@ -1,19 +1,32 @@
 import React from 'react';
-import { Button,Card } from 'react-bootstrap'
+import { Button,Form } from 'react-bootstrap'
 import './Destination.css'
+import mapImg from '../../image/Map.png'
 
-const Destination = (props) => {
-    const {image , name} = props.vehicle;
+const Destination = () => {
     return (
         <div>
-            <div className="grid" >
-            <Card style={{ width: '18rem' }}>
-                <Card.Img variant="top" src={image} />
-                <Card.Body>
-                <Card.Title>{name}</Card.Title>
-                <Button variant="warning">Book Now</Button>
-                </Card.Body>
-            </Card>
+            <h3>Ezze Movers</h3>
+            <div className="destination">
+            <div className="card">
+            <Form>
+                <br/>
+                <Form.Group controlId="formBasicText">
+                <Form.Label>Pick From</Form.Label>
+                <Form.Control type="text" placeholder="From Place Name" />
+                </Form.Group>
+
+                <Form.Group controlId="formBasicText">
+                <Form.Label>Pick To</Form.Label>
+                <Form.Control type="text" placeholder="Destination Place Name" />
+                </Form.Group>
+                <Button variant="warning" type="search"> Search </Button>
+                <br/>
+            </Form>
+            </div>
+            <div className="map-img">
+                <img src={mapImg} alt=""/>
+            </div>
             </div>
         </div>
     );

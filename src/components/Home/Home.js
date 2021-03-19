@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import bg from '../../image/bg.png'
 import './Home.css'
 import { Navbar,Nav,Button } from 'react-bootstrap'
 import fakedata from '../../fakedata/fakedata.json'
-import Destination from '../Destination/Destination';
+import Vehicles from '../Vehicles/Vehicles'
+import { Link } from "react-router-dom";
 
 const Home = () => {
     console.log(fakedata);
@@ -18,20 +18,21 @@ const Home = () => {
                         <Navbar.Toggle aria-controls="basic-navbar-nav" />
                         <Navbar.Collapse id="basic-navbar-nav">
                             <Nav className="mr-auto">
-                                <Nav.Link href="/">Home</Nav.Link>
-                                <Nav.Link href="/">Destination</Nav.Link>
-                                <Nav.Link href="/">Blog</Nav.Link>
-                                <Nav.Link href="/contact-us">Contact</Nav.Link>
+
+                                <Nav.Link to="/">Home</Nav.Link>
+                                <Nav.Link to="/destination">Destination</Nav.Link>
+                                <Nav.Link to="/Blog">Blog</Nav.Link>
+                                <Nav.Link to="/contact-us">Contact</Nav.Link>
+                                <Link to="/login">
                                 <Button variant="warning">Login</Button>{' '}
+                                </Link>
                             </Nav>
                         </Navbar.Collapse>
                         </Navbar>
             </div>
                 {
-                    vehicle.map ( vehicle => <Destination vehicle = {vehicle}></Destination> )
+                    vehicle.map ( vehicle => <Vehicles vehicle = {vehicle}></Vehicles> )
                 }
-
-            <img src={bg} alt=""/>
         </div>
     );
 };
