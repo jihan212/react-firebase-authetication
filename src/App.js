@@ -5,6 +5,7 @@ import Destination from './components/Destination/Destination';
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { createContext, useState } from 'react';
 import Navbar from './components/Navbar/Navbar';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 
 export const userContext = createContext();
 
@@ -18,9 +19,9 @@ function App() {
           <Route exact path="/">
             <Home></Home>
           </Route>
-          <Route path="/destination">
+          <PrivateRoute path="/destination">
             <Destination></Destination>
-          </Route>
+          </PrivateRoute>
           <Route path="/login">
             <Login></Login>
           </Route>

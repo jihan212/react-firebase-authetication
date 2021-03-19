@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react';
 import { Button,Form } from 'react-bootstrap'
 import './Login.css'
 import { FaGoogle,FaFacebook } from 'react-icons/fa';
-import { Link } from "react-router-dom";
+import { Link, useHistory, useLocation } from "react-router-dom";
 import firebase from "firebase/app";
 import "firebase/auth";
 import firebaseConfig from './firebase.config';
@@ -23,6 +23,10 @@ const Login = () => {
 
     const [loggedInUser,setLoggedInUser] = useContext(userContext);
 
+    const history = useHistory();
+    const location = useLocation();
+    let { from } = location.state || { from: { pathname: "/" } };
+
     const provider = new firebase.auth.GoogleAuthProvider();
     const handleGoogleSignIn = () => {
         firebase.auth()
@@ -30,8 +34,8 @@ const Login = () => {
         .then((result) => {
             const user = result.user;
             const newUser = {...user};
-            setUser(newUser);
-            setLoggedInUser(newUser);    
+            setLoggedInUser(newUser);  
+            history.replace(from);  
         }
             )
         .catch((error) => {
