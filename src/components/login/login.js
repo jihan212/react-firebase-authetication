@@ -46,8 +46,17 @@ const Login = () => {
   });
     }
 
-    const handleSubmit = () => {}
-
+    const handleSubmit = (event) => {
+        firebase.auth().createUserWithEmailAndPassword(user.email, user.password)
+            .then((userCredential) => { 
+                var user = userCredential.user;
+            })
+            .catch((error) => {
+                var errorCode = error.code;
+                var errorMessage = error.message;
+            });
+            event.preventDefault();
+    }
     return (
         <div className="login">
             <div className="form">
@@ -56,9 +65,9 @@ const Login = () => {
                 <br/>
                 <Form.Group controlId="formBasicEmail">
                 <Form.Label>Email address</Form.Label>
-                <Form.Control  type="email" placeholder="Enter email" />
+                <Form.Control  type="email" placeholder="Enter email" required />
                 <Form.Label> Username Or Email</Form.Label>
-                <Form.Control  type="email" placeholder="Confirm email" />
+                <Form.Control  type="email" placeholder="Confirm email" required />
                 <Form.Text className="text-muted">
                     We'll never share your email with anyone else.
                 </Form.Text>
@@ -66,11 +75,13 @@ const Login = () => {
 
                 <Form.Group controlId="formBasicPassword">
                 <Form.Label>Password</Form.Label>
-                <Form.Control type="password" placeholder="Password" />
+                <Form.Control type="password" placeholder="Password" required />
                 <br/>
-                <Form.Control type="password" placeholder="Confirm Password" />
+                <Form.Control type="password" placeholder="Confirm Password" required />
                 </Form.Group>
-                <Button onClick = {handleGoogleSignIn} variant="warning" type="submit"> Create An Account </Button>
+                <input className="submitBtn" type="submit" value="Create An Account"/>
+                <br/>
+                <p>Already have an account? <a href="">Login</a> </p>
             </Form>
             </div>
             <div className="buttons">

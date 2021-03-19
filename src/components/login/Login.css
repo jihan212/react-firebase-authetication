@@ -30,3 +30,18 @@
     margin-top: 10px;
     border-radius: 25px;
 }
+.submitBtn{
+    background-color: orange;
+    width:30%;
+    height: 40px;
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    border-radius: 25px;
+    border: 1px solid orange;
+}
+.submitBtn:hover{
+    background-color:white;
+    border: 1px solid orange;
+}
