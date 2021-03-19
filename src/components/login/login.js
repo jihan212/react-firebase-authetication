@@ -51,7 +51,6 @@ const Login = () => {
     return (
         <div className="login">
             <div className="form">
-                <h1>Email:{user.email}</h1>
             <Form onSubmit={handleSubmit}>
                 <h1>Create an account</h1>
                 <br/>

@@ -6,7 +6,6 @@ import mapImg from '../../image/Map.png'
 const Destination = () => {
     return (
         <div>
-            <h3>Ezze Movers</h3>
             <div className="destination">
             <div className="card">
             <Form>
