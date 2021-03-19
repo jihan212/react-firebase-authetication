@@ -10,4 +10,16 @@
   }, {
     "name": "Train",
     "image": "https://static.toiimg.com/thumb/msid-78287167,width-1200,height-900,resizemode-4/.jpg"
+  }, {
+    "name": "Cycle",
+    "image": "https://i.ytimg.com/vi/F5Zi-Dh43PE/maxresdefault.jpg"
+  }, {
+    "name": "Jeep",
+    "image": "https://cars.usnews.com/static/images/Auto/izmo/i159614121/2021_jeep_wrangler_angularfront.jpg"
+  }, {
+    "name": "Rickshaw",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2SFQUSBZn1vKQKd9pzFQDHA2CWlKRPN0ePQ&usqp=CAU"
+  }, {
+    "name": "Auto",
+    "image": "https://5.imimg.com/data5/RO/HO/MH/SELLER-51564865/cng-ape-piaggio-3-wheel-auto-500x500.jpg"
   }]
