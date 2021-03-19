@@ -6,12 +6,25 @@ import { Link } from "react-router-dom";
 import firebase from "firebase/app";
 import "firebase/auth";
 import firebaseConfig from './firebase.config';
-import { useState } from 'react';
 
-
+if (!firebase.apps.length) {
+    firebase.initializeApp(firebaseConfig);
+    }
 
 const Login = () => {
-    
+    const provider = new firebase.auth.GoogleAuthProvider();
+    const handleGoogleSignIn = () => {
+        firebase.auth()
+        .signInWithPopup(provider)
+        .then((result) => {
+            var user = result.user;})
+        .catch((error) => {
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            var email = error.email;
+            var credential = error.credential;
+  });
+    }
 
     return (
         <div className="login">
@@ -44,7 +57,7 @@ const Login = () => {
             </Form>
             </div>
             <div className="buttons">
-                <Button  variant="outline-primary"> <FaGoogle /> Continue With Google </Button>
+                <Button onClick = {handleGoogleSignIn}  variant="outline-primary"> <FaGoogle /> Continue With Google </Button>
                 <Button  variant="outline-primary"> <FaFacebook /> Continue With Facebook </Button>
             </div>
         </div>
