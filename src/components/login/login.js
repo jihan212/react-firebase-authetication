@@ -45,11 +45,32 @@ const Login = () => {
             var credential = error.credential;
   });
     }
+    const FbProvider = new firebase.auth.FacebookAuthProvider();
+    const handleFacebookSignIn = () => {
+        firebase.auth()
+        .signInWithPopup(FbProvider)
+        .then((result) => {
+            var credential = result.credential;
+            var user = result.user;
+            var accessToken = credential.accessToken;
+        })
+        .catch((error) => {
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            var email = error.email;
+            var credential = error.credential;
+
+    // ...
+  });
+    }
 
     const handleSubmit = (event) => {
         firebase.auth().createUserWithEmailAndPassword(user.email, user.password)
-            .then((userCredential) => { 
-                var user = userCredential.user;
+            .then( res => { 
+                const createdUser = {...user};
+                createdUser.isSignedIn = true;
+                createdUser.error = '';
+                setUser(createdUser);
             })
             .catch((error) => {
                 var errorCode = error.code;
@@ -79,14 +100,14 @@ const Login = () => {
                 <br/>
                 <Form.Control type="password" placeholder="Confirm Password" required />
                 </Form.Group>
-                <input className="submitBtn" type="submit" value="Create An Account"/>
+                <input onSubmit={handleSubmit} className="submitBtn" type="submit" value="Create An Account"/>
                 <br/>
                 <p>Already have an account? <a href="">Login</a> </p>
             </Form>
             </div>
             <div className="buttons">
                 <Button onClick = {handleGoogleSignIn}  variant="outline-primary"> <FaGoogle /> Continue With Google </Button>
-                <Button  variant="outline-primary"> <FaFacebook /> Continue With Facebook </Button>
+                <Button onClick = {handleFacebookSignIn}  variant="outline-primary"> <FaFacebook /> Continue With Facebook </Button>
             </div>
         </div>
     );
