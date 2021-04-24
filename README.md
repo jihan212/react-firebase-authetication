@@ -1,5 +1,3 @@
-# React Auth
-
 # Live site : https://ezze-movers.web.app/
 
 # Ezze Movers
